@@ -1,0 +1,1215 @@
+/* App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevents scrolling */
+}
+
+/* Background animation */
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Ensure this is behind everything */
+  animation: backgroundAnimation 10s ease-in-out infinite alternate; /* Animate the background */
+}
+
+/* Define the background animation */
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(135deg, #243b55, #232931);
+  }
+  50% {
+    background: linear-gradient(135deg, #232931, #243b55);
+  }
+  100% {
+    background: linear-gradient(135deg, #243b55, #232931);
+  }
+}
+
+/* Moon background GIF */
+.moon-background {
+  position: fixed; /* Make it fixed to stay in the background */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Ensure it covers the area properly */
+  z-index: -1; /* Place it behind other elements */
+}
+
+/* Optional: Center content within the body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+
+
+/* Navbar */
+/* Add this CSS to your stylesheet */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+}
+
+
+/* singup and login */
+
+
+
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #282c34;
+  padding: 10px 0;
+  border: 1px solid cyan;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 30px;
+  z-index: 10;
+  position: fixed; /* Changed from absolute to fixed */
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%); /* Ensures it's centered */
+  transition: all 0.3s ease;
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: cyan;
+  padding: 10px;
+  display: block;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.nav-item a:hover {
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  text-shadow: 0 0 5px cyan, 0 0 10px cyan;
+}
+
+.nav-item a.active {
+  font-weight: bold;
+  color: goldenrod;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  position: relative;
+}
+
+.hamburger .bar {
+  width: 30px;
+  height: 4px;
+  background-color: cyan;
+  margin: 5px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 500px) {
+  /* Hide the navbar items by default on small screens */
+  .navbar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #282c34;
+    border-radius: 20px;
+  }
+
+  /* Show the hamburger button */
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  /* When the navbar is open, show the items */
+  .navbar.open {
+    display: flex;
+  }
+
+  /* Adjust the nav-item styling for small screens */
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-item a {
+    font-size: 16px;
+    padding: 15px;
+  }
+}
+
+
+
+
+
+/* Optional: Add animated stars */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 1.5s infinite alternate;
+}
+
+/* Randomly position and size the stars */
+.star:nth-child(1) { top: 10%; left: 20%; width: 2px; height: 2px; }
+.star:nth-child(2) { top: 30%; left: 50%; width: 3px; height: 3px; }
+.star:nth-child(3) { top: 70%; left: 80%; width: 1px; height: 1px; }
+.star:nth-child(4) { top: 40%; left: 40%; width: 4px; height: 4px; }
+.star:nth-child(5) { top: 60%; left: 60%; width: 5px; height: 5px; }
+.star:nth-child(6) { top: 15%; left: 25%; width: 2px; height: 2px; }
+.star:nth-child(7) { top: 25%; left: 65%; width: 3px; height: 3px; }
+.star:nth-child(8) { top: 75%; left: 15%; width: 2px; height: 2px; }
+.star:nth-child(9) { top: 85%; left: 35%; width: 1px; height: 1px; }
+.star:nth-child(10) { top: 50%; left: 10%; width: 3px; height: 3px; }
+/* Add more star positioning as needed */
+
+
+/* Twinkle animation */
+@keyframes twinkle {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+
+/* General styles */
+.earn-container {
+  background: linear-gradient(135deg, #2c3e50, #000000); /* Dark Slate Blue to Black */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.earn-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.earn-header h1 {
+  font-size: 2rem;
+  color: #D3D3D3; /* Light Gray for contrast */
+}
+
+.earn-header p {
+  color: #C0C0C0; /* Silver for a sophisticated look */
+  margin-bottom: 10px;
+}
+
+.earn-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.earn-coin-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.earn-coin {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00BFFF; /* Deep Sky Blue for the coin name */
+}
+
+.earn-image {
+  width: 100px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.earn-image:hover {
+  transform: scale(1.1);
+}
+
+.earn-energy {
+  font-size: 1.2rem;
+  color: #3CB371; /* Medium Sea Green for energy text */
+}
+
+.earn-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.control-btn {
+  background-color: #4682B4; /* Steel Blue for button background */
+  color: #F0F0F0; /* Cool White for button text */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.control-btn:hover {
+  background-color: #1976d2; /* Darker blue on hover */
+  transform: translateY(-2px);
+}
+
+.control-btn i {
+  margin-right: 5px;
+
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 638px) {
+  .earn-container {
+    padding: 15px;
+    max-width: 90%; /* Allow more width on smaller screens */
+  }
+
+  .earn-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .earn-header p {
+    font-size: 1rem;
+  }
+
+  .earn-coin {
+    font-size: 1.25rem; /* Slightly smaller coin text */
+  }
+
+  .earn-energy {
+    font-size: 1.1rem;
+  }
+
+  .earn-controls {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+  }
+
+  .control-btn {
+    padding: 8px 12px; /* Smaller buttons on mobile */
+    font-size: 0.9rem;
+  }
+
+  .earn-image {
+    width: 80px; /* Smaller image size on mobile */
+  }
+}
+
+@media (max-width: 500px) {
+  .earn-container {
+    padding: 10px;
+    max-width: 100%; /* Full width container on small screens */
+  }
+
+  .earn-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .earn-header p {
+    font-size: 0.9rem;
+  }
+
+  .earn-coin {
+    font-size: 1rem; /* Smaller coin name font */
+  }
+
+  .earn-energy {
+    font-size: 1rem;
+  }
+
+  .earn-image {
+    width: 60px; /* Further reduced image size */
+  }
+
+  .earn-controls {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .control-btn {
+    width: 100%; /* Make buttons full width */
+    padding: 12px;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+
+/* Additional styling for borders and shadows */
+
+
+
+
+
+
+
+/* Games */
+
+
+.sps-container {
+  background: linear-gradient(135deg, #2c3e50, #000000); /* Dark Slate Blue to Black */
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1); /* Soft glow */
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.sps-choices {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.sps-btn {
+  background-color: #d4af37; /* Gold */
+  color: black; /* Dark text for contrast */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5); /* Golden glow */
+}
+
+.sps-btn:hover {
+  background-color: #b59428; /* Darker Gold on hover */
+  transform: translateY(-2px);
+}
+
+.sps-results {
+  margin-top: 20px;
+}
+
+.sps-result {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.sps-result.win {
+  color: #98c379; /* Soft Green for win */
+}
+
+.sps-result.lose {
+  color: #f07178; /* Soft Red for lose */
+}
+
+.sps-result.tie {
+  color: #ffeb3b; /* Soft Yellow for tie */
+}
+
+.reset-btn {
+  background-color: #c52d2e; /* Deep Red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.reset-btn:hover {
+  background-color: #a3292b; /* Darker Red on hover */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  background: #121212; /* Dark background */
+  color: #e0e0e0; /* Light gray text for contrast */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full viewport height */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.wallet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  width: 80vw;
+  max-width: 1200px;
+  height: 80vh;
+  border-radius: 10px;
+  margin: auto;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+  background-color: #1f1f1f;
+  overflow: hidden;
+}
+
+.wallet-section {
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.wallet-info, .wallet-content {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  overflow: hidden;
+}
+
+.generate-button{
+  margin: 20px;
+}
+
+.options-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.option-button, .generate-button, .enter-button, .login-button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6200ea;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.option-button:hover, .generate-button:hover, .enter-button:hover, .login-button:hover {
+  background-color: #3700b3;
+  transform: scale(1.05);
+}
+
+.mnemonic-input {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  margin: 15px 0;
+  background-color: #333333;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Coin list container with fixed height and scroll */
+.coin-container {
+  width: 100%;
+  max-height: 350px;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Scrollbar styling for a better look */
+.coin-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.coin-container::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+
+.coin-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Coin item styling */
+.coin-balance {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  font-size: 22px;
+  padding: 15px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  transition: background-color 0.3s;
+}
+
+.coin-balance:hover {
+  background-color: #3a3a3a;
+}
+
+.coin-name {
+  color: #76ff03;
+}
+
+.coin-amount {
+  color: #fff;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+  .wallet-container {
+    padding: 30px;
+    width: 90vw; /* Adjust width for tablet/medium screens */
+  }
+
+  .options-section {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .option-button, .generate-button, .enter-button, .login-button {
+    font-size: 16px; /* Slightly smaller font size */
+    padding: 12px 25px; /* Slightly smaller padding */
+  }
+
+  .coin-container {
+    max-height: 300px; /* Decrease max height for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .wallet-container {
+    padding: 20px;
+    width: 100vw; /* Full width for smaller screens */
+    height: 70vh; /* Remove fixed height */
+  }
+
+  .wallet-info, .wallet-content {
+    padding: 15px; /* Decrease padding on smaller screens */
+  }
+
+  .mnemonic-input {
+    font-size: 14px; /* Smaller font size for input */
+  }
+
+  .option-button, .generate-button, .enter-button, .login-button {
+    width: 100%; /* Full width buttons */
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .coin-container {
+    max-height: 250px; /* Adjust max-height for mobile */
+  }
+
+  .coin-balance {
+    font-size: 18px; /* Smaller font size for coin balance */
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wallet-container {
+    padding: 15px;
+    width: 95vw; /* Almost full width on small screens */
+    height: 50vh;
+  }
+
+  .coin-balance {
+    font-size: 16px; /* Smaller font size for mobile */
+    padding: 10px;
+  }
+
+  .mnemonic-input {
+    font-size: 13px; /* Further reduced font size */
+  }
+
+  .option-button, .generate-button, .enter-button, .login-button {
+    font-size: 12px; /* Smaller font size */
+    padding: 8px 18px; /* Smaller button size */
+  }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Transaction.css */
+
+.transaction-container {
+  background: linear-gradient(135deg, #2c3e50, #000000); /* Dark Slate Blue to Black */
+  border-radius: 10px;
+  padding: 30px;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.transaction-container h2 {
+  text-align: center;
+  color: #9ac1cb;
+  font-size: 1.8em;
+}
+
+.transaction-input,
+.transaction-select {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+  color: #fff;
+  background: #222;
+}
+
+.transaction-input:focus,
+.transaction-select:focus {
+  outline: 2px solid #9ac1cb;
+  transition: outline 0.3s ease;
+}
+
+.transaction-summary p {
+  font-size: 1em;
+  margin: 5px 0;
+  margin-bottom: 10px;
+  color: #e6e6e6;
+}
+
+.transaction-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  background: linear-gradient(135deg, #007bff, #00bcd4); /* Blue to Cyan */
+    color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.transaction-button:hover {
+  background: linear-gradient(135deg, #007bb8, #00bcd4); /* Lighter Blue to Lighter Cyan */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Swap Page */
+
+.swap-page {
+  background: #1a1a2e;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  margin: 20px auto;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.swap-page h1 {
+  text-align: center;
+  color: #9ac1cb;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: #ffffff;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  outline: none;
+  background-color: #555;
+}
+
+.conversion-result {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.fee {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+.swap-button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #007bff, #00bcd4);
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.swap-button:hover {
+  background: linear-gradient(135deg, #007bb8, #00bcd4);
+}
+
+.swap-button:disabled {
+  background-color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 768px) {
+  .swap-page {
+    padding: 20px;
+  }
+
+  .form-group label,
+  .form-group select,
+  .form-group input {
+    font-size: 0.9em;
+  }
+
+  .swap-button {
+    font-size: 1em;
+  }
+
+  .conversion-result {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .swap-page {
+    padding: 15px;
+  }
+
+  .swap-page h1 {
+    font-size: 1.5em;
+  }
+
+  .form-group select,
+  .form-group input {
+    padding: 8px;
+  }
+
+  .swap-button {
+    font-size: 0.9em;
+    padding: 12px;
+  }
+
+  .conversion-result {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 320px) {
+  .swap-page {
+    padding: 10px; /* Further reduce padding for ultra-small screens */
+  }
+
+  .swap-page h1 {
+    font-size: 1.3em; /* Smaller heading font */
+    margin-bottom: 15px; /* Less space below the heading */
+  }
+
+  .form-group label {
+    font-size: 0.8em; /* Smaller label font */
+  }
+
+  .form-group select,
+  .form-group input {
+    padding: 6px; /* Reduce padding in input fields */
+    font-size: 0.8em; /* Smaller font size */
+  }
+
+  .swap-button {
+    font-size: 0.85em; /* Smaller button font */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .conversion-result {
+    font-size: 0.85em; /* Smaller conversion result text */
+  }
+
+  .fee {
+    font-size: 0.8em; /* Smaller fee text */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Reffral Page */
+/* Referral Container */
+.referral-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px auto;
+  background: linear-gradient(135deg, #283e51, #4b79a1);
+  border-radius: 12px;
+  max-width: 400px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Title and Description */
+.referral-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.referral-description {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Code Container */
+.referral-code-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Referral Code */
+.referral-code {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+/* Copy Button */
+.copy-button {
+  background: #ffd700;
+  color: #283e51;
+  /* padding: 10px 15px; */
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  width: 150px;
+  height: 50px;
+}
+
+
+
+.copy-button.launching {
+  pointer-events: none;
+  background-color: #333;
+  padding: 0;
+  width: 150px;
+  height: 100px;
+}
+
+/* Rocket GIF */
+.rocket-gif {
+   width: 150px;
+  height: 100px; 
+  animation: rocket-fly 3s ease-in-out forwards;
+}
+
+@keyframes rocket-fly {
+  0% {
+    opacity: 1;
+   
+  }
+  100% {
+    opacity: 1;
+ 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ref User page */
+
+
+/* for suth */
+/* Minty Fresh color for the toggle button */
+.toggle-btn {
+  background: #033047; /* Minty fresh green */
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-top: 20px;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #0a2f7a; /* Darker mint green on hover */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Container and Form Styles */
+.ref-user-container {
+  max-width: 500px;
+  width: 250px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Space-like gradient */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add Stars and Rocket to Background */
+.ref-user-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+
+
+.form-title {
+  text-align: center;
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add shadow for better readability */
+}
+
+/* Form Styles */
+.ref-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: 14px;
+  color: #ddd; /* Light color for labels */
+}
+
+.input-field {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+}
+
+.input-field:focus {
+  border-color: #ff6347; /* Change border color to a fiery red */
+}
+
+.submit-btn {
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.error-msg {
+  color: red;
+  text-align: center;
+  font-size: 14px;
+}
+
+.success-msg {
+  color: green;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+  .ref-user-container {
+    padding: 15px;
+  }
+  .form-title {
+    font-size: 20px;
+  }
+  .submit-btn {
+    font-size: 14px;
+  }
+}

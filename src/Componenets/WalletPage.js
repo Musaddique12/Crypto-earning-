@@ -82,6 +82,7 @@ const WalletPage = () => {
       ...prevState,
       address: "userLoggedIn" // or any appropriate flag to show user is logged in
     }));
+    console.log("User logged in with address:", UserData);
   };
 
   return (

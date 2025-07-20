@@ -1,4 +1,4 @@
-#🪙 Hype Coin – Web3 Tap-to-Earn, Swap & Game DApp
+# 🪙 Hype Coin – Web3 Tap-to-Earn, Swap & Game DApp
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react)
 ![Ethers.js](https://img.shields.io/badge/Ethers.js-Ethereum-blue?style=for-the-badge)

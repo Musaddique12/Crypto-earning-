@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://crypto-earning.vercel.app/static/media/hpcimg1.03ddabc360914d5c337e.png" alt="Hype Coin Logo" width="160" />
+</p>
+
 # 🪙 Hype Coin – Web3 Tap-to-Earn, Swap & Game DApp
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react)
